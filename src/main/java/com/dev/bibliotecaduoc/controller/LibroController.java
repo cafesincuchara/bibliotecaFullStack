@@ -14,8 +14,6 @@ public class LibroController {
 
     @Autowired
     private LibroService libroService;
-    @Autowired
-    private ParentAwareNamingStrategy parentAwareNamingStrategy;
 
     @GetMapping
     public List<Libro> listarLibros(){
@@ -40,5 +38,10 @@ public class LibroController {
     @DeleteMapping("/{id}")
     public String eliminarLibro(@PathVariable int id){
         return libroService.deleteLibor(id);
+    }
+
+    @GetMapping("/total")
+    public int totalLibrosV2(){
+        return libroService.totalLibrosV2();
     }
 }

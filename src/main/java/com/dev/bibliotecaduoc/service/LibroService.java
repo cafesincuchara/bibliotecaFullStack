@@ -40,4 +40,12 @@ public class LibroService {
         }
         return "ERROR";
     }
+
+    public int totalLibros(){
+        return libroRepository.obtenerLibros().size();
+    }
+
+    public int totalLibrosV2(){
+        return libroRepository.totalLibros();
+    }
 }
